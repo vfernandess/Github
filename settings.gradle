@@ -1,0 +1,10 @@
+include ':feature:repo:public'
+include ':feature:pull-request:impl'
+include ':feature:search:public'
+include ':feature:search:impl'
+include ':feature:home:impl'
+include ':feature:home:public'
+include ':utility'
+include ':core'
+include ':app'
+rootProject.name = "Github"
