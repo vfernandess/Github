@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.2"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation coreDependencies.kotlin
+
+    implementation viewDependencies.recycler
+    implementation viewDependencies.appCompat
+
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.rxAndroid
+
+    implementation testDependencies.mockWebServer
+
+    implementation androidTestDependencies.rxIdler
+    implementation androidTestDependencies.espresso
+    implementation androidTestDependencies.androidxNavigationTest
+    implementation androidTestDependencies.fragmentTesting
+}
