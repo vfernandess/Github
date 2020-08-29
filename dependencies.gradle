@@ -22,13 +22,13 @@ ext {
             androidx : 'androidx.core:core-ktx:1.3.0',
             constraintLayout : 'androidx.constraintlayout:constraintlayout:1.1.3',
             picasso: "com.squareup.picasso:picasso:2.71828",
-            shimmer : 'com.facebook.shimmer:shimmer:0.5.0',
             fragment: "androidx.fragment:fragment-ktx:$fragment_version",
             navigationFragment: "androidx.navigation:navigation-fragment-ktx:$nav_version",
             navigation: "androidx.navigation:navigation-ui-ktx:$nav_version",
             recycler: "androidx.recyclerview:recyclerview:$recylerview_version",
             lifecycle: "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
-            legacy: 'androidx.legacy:legacy-support-v4:1.0.0'
+            legacy: 'androidx.legacy:legacy-support-v4:1.0.0',
+            pullToRefresh: "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     ]
 
     dataDependencies = [
@@ -45,11 +45,11 @@ ext {
             jUnit : "androidx.test.ext:junit:$junit_version",
             mockWebServer :"com.squareup.okhttp3:mockwebserver:4.8.0",
             mockk : "io.mockk:mockk:1.10.0",
+            arch: "androidx.arch.core:core-testing:2.1.0",
             unitUtility: ":testing:unit-utility"
     ]
 
     androidTestDependencies = [
-            arch: "androidx.arch.core:core-testing:2.1.0",
             androidxTestRules: "androidx.test:rules:$androix_test_version",
             androidxTestRunner: "androidx.test:runner:$androix_test_version",
             rxIdler: 'com.squareup.rx.idler:rx3-idler:0.11.0',
@@ -57,7 +57,7 @@ ext {
             espressoContrib: "androidx.test.espresso:espresso-contrib:$espresso_version",
             androidxNavigationTest: "androidx.navigation:navigation-testing:$nav_version",
             fragmentTesting: "androidx.fragment:fragment-testing:$fragment_version",
-            uiUtiliy: ":testing:ui-utility"
+            uiUtility: ":testing:ui-utility"
     ]
 
     projectDependencies = [

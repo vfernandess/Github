@@ -1,3 +1,6 @@
+include ':testing:unit-utility'
+include ':testing:ui-utility'
+include ':feature:repo:impl'
 include ':feature:repo:public'
 include ':feature:pull-request:impl'
 include ':feature:search:public'
