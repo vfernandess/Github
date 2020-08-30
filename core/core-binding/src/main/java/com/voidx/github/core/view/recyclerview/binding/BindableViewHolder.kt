@@ -9,7 +9,7 @@ open class BindableViewHolder<VDB : ViewDataBinding>(val viewDataBinding: VDB) :
     var onClick: ((position: Int) -> Unit)? = null
 
     init {
-        viewDataBinding.executePendingBindings()
+//        viewDataBinding.executePendingBindings()
         viewDataBinding.root.setOnClickListener { onClick?.invoke(this.adapterPosition) }
     }
 

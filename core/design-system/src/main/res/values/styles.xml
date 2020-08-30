@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text"/>
+
+    <style name="Text.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Text.Light">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="Text.Normal">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Text.Normal.Shark">
+        <item name="android:textColor">@color/shark</item>
+    </style>
+
+    <style name="Text.Normal.Medium" parent="Text.Medium"/>
+
+    <style name="Text.Normal.Light" parent="Text.Light"/>
+
+    <style name="Text.Normal.Light.SilverChalice">
+        <item name="android:textColor">@color/silver_chalice</item>
+    </style>
+
+    <style name="Text.Normal.Medium.Azure">
+        <item name="android:textColor">@color/azure</item>
+    </style>
+
+    <style name="Text.Medium.Meteor">
+        <item name="android:textColor">@color/meteor</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Title.Bold" parent="Text.Bold"/>
+
+    <style name="Title.Bold.Azure">
+        <item name="android:textColor">@color/azure</item>
+    </style>
+
+</resources>

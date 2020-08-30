@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -22,26 +21,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    buildFeatures{
-        dataBinding = true
-    }
 }
 
 dependencies {
     implementation coreDependencies.kotlin
-    implementation coreDependencies.dagger
-    kapt coreDependencies.daggerCompiler
-
-    implementation viewDependencies.appCompat
-    implementation viewDependencies.fragment
-    implementation viewDependencies.recycler
-    implementation viewDependencies.lifecycle
-    implementation viewDependencies.picasso
-
-    implementation dataDependencies.retrofit
-    implementation dataDependencies.retrofitLogging
-    implementation dataDependencies.gsonConverter
-    implementation dataDependencies.retrofitRxJava
-    implementation dataDependencies.rxAndroid
 }
