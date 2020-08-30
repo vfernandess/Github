@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -22,15 +22,59 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+    }
+
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
+
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(projectDependencies.coreAndroid)
+    implementation project(projectDependencies.utility)
 
+    implementation project(projectDependencies.userPublic)
+    implementation project(projectDependencies.userImpl)
+
+    implementation project(projectDependencies.repoPublic)
+    implementation project(projectDependencies.repoImpl)
+
+    implementation project(projectDependencies.searchPublic)
+    implementation project(projectDependencies.searchImpl)
+
+    implementation project(projectDependencies.pullRequestImpl)
+
+    implementation coreDependencies.kotlin
+    implementation coreDependencies.dagger
+    kapt coreDependencies.daggerCompiler
+
+    implementation viewDependencies.fragment
+    implementation viewDependencies.navigation
+    implementation viewDependencies.navigationFragment
+    implementation viewDependencies.appCompat
+    implementation viewDependencies.lifecycle
+    implementation viewDependencies.androidx
+
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.retrofit
 }
