@@ -1,5 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.voidx.search">
-
-    /
-</manifest>
+<manifest package="com.voidx.search"/>

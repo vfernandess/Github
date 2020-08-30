@@ -7,10 +7,11 @@ import com.voidx.search.data.model.SearchResult
 import com.voidx.search.data.repository.SearchRepository
 import com.voidx.search.repo.domain.SearchRepoUseCase
 import io.reactivex.rxjava3.core.Single
+import javax.inject.Inject
 
-class SearchRepoUseCaseImpl(
+class SearchRepoUseCaseImpl @Inject constructor (
     private val repository: SearchRepository,
-    private val mapper: Mapper<Repo, RepoDTO>
+    private val mapper: Mapper<@JvmSuppressWildcards Repo, @JvmSuppressWildcards RepoDTO>
 ) : SearchRepoUseCase {
 
     private var page = 1
@@ -29,10 +30,12 @@ class SearchRepoUseCaseImpl(
     }
 
     private fun handleResult(result: SearchResult<Repo>): List<RepoDTO> {
-
         hasNextPage = result.hasNextPage
 
-        page += 1
+        if (hasNextPage) {
+            page += 1
+        }
+
         return result.items.map { mapper.map(it) }
     }
 
@@ -40,6 +43,11 @@ class SearchRepoUseCaseImpl(
         page = 1
     }
 
-    override fun isFirstPage(): Boolean = page == 1
+    override fun isFirstPage(): Boolean =
+        if (page == 1) {
+            true
+        } else {
+            (page - 1) == 1
+        }
 
 }

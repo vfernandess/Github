@@ -5,8 +5,9 @@ import com.voidx.search.data.api.SearchAPI
 import com.voidx.search.data.model.SearchResult
 import com.voidx.search.data.repository.SearchRepository
 import io.reactivex.rxjava3.core.Single
+import javax.inject.Inject
 
-class SearchRemoteRepositoryImpl(private val searchAPI: SearchAPI): SearchRepository {
+class SearchRemoteRepositoryImpl @Inject constructor (private val searchAPI: SearchAPI): SearchRepository {
 
     override fun searchRepo(searchOption: String, sortBy: String, page: Int): Single<SearchResult<Repo>> {
         return searchAPI.searchRepo(searchOption, sortBy, page).map {

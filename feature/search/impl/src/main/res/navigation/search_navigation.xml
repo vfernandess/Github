@@ -2,12 +2,19 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/search_navigation">
+    android:id="@+id/search_navigation"
+    app:startDestination="@id/searchRepoFragment"
+    >
+
 
     <fragment
         android:id="@+id/searchRepoFragment"
         android:name="com.voidx.search.repo.view.SearchRepoFragment"
         android:label="fragment_search_repo"
         tools:layout="@layout/fragment_search_repo" />
+
+    <action
+        android:id="@+id/action_global_searchRepoFragment"
+        app:destination="@id/searchRepoFragment" />
 
 </navigation>
