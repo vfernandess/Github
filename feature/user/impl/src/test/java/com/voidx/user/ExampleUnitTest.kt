@@ -1,4 +1,4 @@
-package com.voidx.home
+package com.voidx.user
 
 import org.junit.Test
 
