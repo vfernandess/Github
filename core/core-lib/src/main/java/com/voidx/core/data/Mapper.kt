@@ -1,4 +1,4 @@
-package com.voidx.github.utility.data
+package com.voidx.core.data
 
 interface Mapper<From, To> {
 

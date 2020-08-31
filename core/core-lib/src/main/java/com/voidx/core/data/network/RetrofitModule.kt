@@ -1,6 +1,6 @@
-package com.voidx.github.core.network
+package com.voidx.core.data.network
 
-import com.voidx.github.core.BuildConfig
+import com.voidx.core.data.Environment
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -16,10 +16,10 @@ internal interface RetrofitModule {
     companion object {
 
         @[Provides Singleton]
-        fun providesOkHttpClient(): OkHttpClient {
+        fun providesOkHttpClient(environment: Environment): OkHttpClient {
             val builder = OkHttpClient().newBuilder()
 
-            if (BuildConfig.DEBUG) {
+            if (environment.debug) {
                 builder.addInterceptor(
                     HttpLoggingInterceptor(HttpLoggingInterceptor.Logger.DEFAULT)
                         .setLevel(HttpLoggingInterceptor.Level.BASIC)
@@ -30,9 +30,9 @@ internal interface RetrofitModule {
         }
 
         @[Provides Singleton]
-        fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        fun providesRetrofit(okHttpClient: OkHttpClient, environment: Environment): Retrofit {
             return Retrofit.Builder()
-                .baseUrl("https://api.github.com/")
+                .baseUrl(environment.url)
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
