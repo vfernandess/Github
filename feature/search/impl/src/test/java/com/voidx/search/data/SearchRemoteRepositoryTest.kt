@@ -41,7 +41,7 @@ class SearchRemoteRepositoryTest {
             .searchRepo("options", "sort", 1)
             .test()
             .assertNoErrors()
-            .assertValue { it.hasNextPage == false }
+            .assertValue { it.hasNextPage.not() }
             .assertValue { it.items.isNotEmpty() }
 
     }

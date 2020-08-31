@@ -23,8 +23,8 @@ import org.junit.Test
 
 class SearchRepoViewModelTest {
 
-    val mapper: Mapper<Repo, RepoDTO> = mockk(relaxed = true)
-    val repository: SearchRepository = mockk(relaxed = true)
+    private val mapper: Mapper<Repo, RepoDTO> = mockk(relaxed = true)
+    private val repository: SearchRepository = mockk(relaxed = true)
 
     lateinit var viewModel: SearchRepoViewModel
     lateinit var useCase: SearchRepoUseCase
@@ -104,7 +104,7 @@ class SearchRepoViewModelTest {
     }
 
     @Test
-    fun `check empty state for only for empty results and first page `() {
+    fun `check empty state only for empty results and first page `() {
 
         every { mapper.map(any()) } returns RepoDTO()
 
