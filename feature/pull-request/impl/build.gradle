@@ -6,39 +6,56 @@ android {
     compileSdkVersion 29
     buildToolsVersion "30.0.2"
 
-    defaultConfig {
-        minSdkVersion 22
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
-        exclude("META-INF/*.kotlin_module")
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
     }
 }
 
 dependencies {
+    implementation project(projectDependencies.utility)
+    implementation project(projectDependencies.coreAndroid)
+    implementation project(projectDependencies.coreBinding)
+    implementation project(projectDependencies.designSystem)
+    implementation project(projectDependencies.pullRequestPublic)
+    implementation project(projectDependencies.repoPublic)
+    implementation project(projectDependencies.userPublic)
 
     implementation coreDependencies.kotlin
     implementation coreDependencies.dagger
     kapt coreDependencies.daggerCompiler
+
+    implementation viewDependencies.legacy
+    implementation viewDependencies.appCompat
+    implementation viewDependencies.androidx
+    implementation viewDependencies.constraintLayout
+    implementation viewDependencies.fragment
+    implementation viewDependencies.navigation
+    implementation viewDependencies.navigationFragment
+    implementation viewDependencies.recycler
+    implementation viewDependencies.lifecycle
+    implementation viewDependencies.picasso
+    implementation viewDependencies.pullToRefresh
+
+    implementation dataDependencies.gson
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitLogging
+    implementation dataDependencies.gsonConverter
+    implementation dataDependencies.retrofitRxJava
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.rxAndroid
+
+    testImplementation project(testDependencies.unitUtility)
+    testImplementation project(androidTestDependencies.uiUtility)
+    testImplementation testDependencies.jUnit
+    testImplementation testDependencies.mockk
+    testImplementation testDependencies.arch
 }
