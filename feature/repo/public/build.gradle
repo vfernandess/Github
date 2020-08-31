@@ -31,7 +31,6 @@ android {
 dependencies {
     implementation project(path: projectDependencies.designSystem)
     implementation project(path: projectDependencies.coreBinding)
-    implementation project(path: projectDependencies.pullRequestPublic)
     implementation project(path: projectDependencies.userPublic)
 
     implementation coreDependencies.kotlin

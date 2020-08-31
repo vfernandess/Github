@@ -29,8 +29,6 @@ android {
 }
 
 dependencies {
-    implementation project(path: projectDependencies.utility)
-
     implementation coreDependencies.kotlin
     implementation dataDependencies.gson
 }
