@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.voidx.github.core.presentation.State
-import com.voidx.github.utility.data.ext.disposedBy
+import com.voidx.core.data.ext.disposedBy
 import com.voidx.pull.repo.domain.RepoPullRequestUseCase
 import com.voidx.pull.repo.domain.model.PullRequestDTO
 import com.voidx.repo.model.RepoDTO

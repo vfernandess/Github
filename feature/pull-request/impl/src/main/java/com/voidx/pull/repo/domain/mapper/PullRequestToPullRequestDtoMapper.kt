@@ -1,6 +1,6 @@
 package com.voidx.pull.repo.domain.mapper
 
-import com.voidx.github.utility.data.Mapper
+import com.voidx.core.data.Mapper
 import com.voidx.pull.data.model.PullRequest
 import com.voidx.pull.repo.domain.model.PullRequestDTO
 import com.voidx.user.data.model.User
@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 internal class PullRequestToPullRequestDtoMapper @Inject constructor(
     private val userMapper: Mapper<@JvmSuppressWildcards User, @JvmSuppressWildcards UserDTO>
-) : Mapper<PullRequest, PullRequestDTO> {
+) :Mapper<PullRequest, PullRequestDTO> {
 
     override fun map(from: PullRequest): PullRequestDTO {
         return PullRequestDTO().apply {

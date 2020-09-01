@@ -1,6 +1,6 @@
 package com.voidx.pull.repo.domain
 
-import com.voidx.github.utility.data.Mapper
+import com.voidx.core.data.Mapper
 import com.voidx.pull.data.repository.PullRequestRepository
 import com.voidx.pull.repo.domain.impl.RepoPullRequestUseCaseImpl
 import com.voidx.pull.repo.domain.mapper.PullRequestToPullRequestDtoMapper

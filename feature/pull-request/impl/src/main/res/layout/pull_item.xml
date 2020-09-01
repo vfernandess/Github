@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pull"
+            type="com.voidx.pull.repo.domain.model.PullRequestDTO" />
+
+        <variable
+            name="avatarPlaceholder"
+            type="android.graphics.drawable.Drawable" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/pr_title"
+            style="@style/Title.Bold.Azure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{pull.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Título da PR" />
+
+        <TextView
+            android:id="@+id/pr_description"
+            style="@style/Text.Normal.Shark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{pull.description}"
+            app:layout_constraintEnd_toEndOf="@+id/pr_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pr_title"
+            tools:text="Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mé, boa gentis num é. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Sapien in monti palavris qui num significa nadis i pareci latim. Não sou faixa preta cumpadi, sou preto inteiris, inteiris." />
+
+        <ImageView
+            android:id="@+id/user_photo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/ic_account"
+            app:circle_src_url="@{pull.owner.avatar}"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pr_description"
+            app:placeholder="@{avatarPlaceholder}" />
+
+        <TextView
+            android:id="@+id/user_name"
+            style="@style/Text.Normal.Medium.Azure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{pull.owner.login}"
+            app:layout_constraintBottom_toBottomOf="@+id/user_photo"
+            app:layout_constraintStart_toEndOf="@+id/user_photo"
+            app:layout_constraintTop_toTopOf="@+id/user_photo"
+            tools:text="vfernandess" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

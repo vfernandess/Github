@@ -38,8 +38,6 @@ dependencies {
     implementation viewDependencies.androidx
     implementation viewDependencies.constraintLayout
     implementation viewDependencies.fragment
-    implementation viewDependencies.navigation
-    implementation viewDependencies.navigationFragment
     implementation viewDependencies.recycler
     implementation viewDependencies.lifecycle
     implementation viewDependencies.picasso

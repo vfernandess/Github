@@ -2,7 +2,7 @@ package com.voidx.pull.repo.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.voidx.github.core.presentation.State
-import com.voidx.github.utility.data.Mapper
+import com.voidx.core.data.Mapper
 import com.voidx.pull.data.model.PullRequest
 import com.voidx.pull.data.repository.PullRequestRepository
 import com.voidx.pull.repo.domain.RepoPullRequestUseCase

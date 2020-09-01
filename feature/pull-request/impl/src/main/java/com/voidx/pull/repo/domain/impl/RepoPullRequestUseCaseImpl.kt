@@ -1,6 +1,6 @@
 package com.voidx.pull.repo.domain.impl
 
-import com.voidx.github.utility.data.Mapper
+import com.voidx.core.data.Mapper
 import com.voidx.pull.data.model.PullRequest
 import com.voidx.pull.data.repository.PullRequestRepository
 import com.voidx.pull.repo.domain.RepoPullRequestUseCase
@@ -16,7 +16,7 @@ class RepoPullRequestUseCaseImpl @Inject constructor (
 
     override fun getPullRequestsFromRepo(repo: RepoDTO): Single<List<PullRequestDTO>> {
         return repository
-            .getPullRequestsFromRepo(repo.owner?.login ?: "", repo.name)
+            .getPullRequestsFromRepo(repo.owner?.login ?: "", repo.name ?: "")
             .map { prs ->
                 prs.map { mapper.map(it) }
             }
