@@ -1,0 +1,9 @@
+ext {
+
+    min_sdk_version = 22
+    target_sdk_version = 29
+
+    compile_sdk_version = 29
+    build_tools_version = "30.0.2"
+
+}
