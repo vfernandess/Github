@@ -27,6 +27,7 @@ android {
         debug {
 
         }
+        instrumentation.initWith(debug)
         instrumentation {
             buildConfigField "String", "SERVER_URL", "\"http://localhost:8080/\""
         }
