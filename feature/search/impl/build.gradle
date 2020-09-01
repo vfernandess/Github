@@ -66,4 +66,5 @@ dependencies {
     androidTestImplementation androidTestDependencies.espressoContrib
     androidTestImplementation androidTestDependencies.mockWebServer
     androidTestImplementation androidTestDependencies.rxIdler
+    androidTestImplementation androidTestDependencies.fragmentTesting
 }
