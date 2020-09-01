@@ -1,17 +1,20 @@
 package com.voidx.github.di
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import com.voidx.github.R
+import android.content.Context
+import com.voidx.github.core.navigator.Navigator
 import dagger.Module
 import dagger.Provides
 
 @Module
-class NavigationModule(private val activity: AppCompatActivity) {
+class NavigationModule(private val navigator: Navigator, private val context: Context) {
 
     @Provides
-    fun providesNavigation(): NavController {
-        return activity.findNavController(R.id.fragment_container)
+    fun activityContent(): Context {
+        return context
+    }
+
+    @Provides
+    fun providesNavigation(): Navigator {
+        return navigator
     }
 }
