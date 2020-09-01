@@ -66,6 +66,8 @@ utilizados em testes instumentizados
 # Fontes de pesquisa
 
 [GDG Talk: Android - Modularização em larga escala](https://www.youtube.com/watch?v=UFmmcUvWoI0)
+
 [Breaking Down Modularization](https://www.droidcon.com/media-detail?video=380844229)
+
 [Android at Scale @Square](https://www.droidcon.com/media-detail?video=380843878)
     
