@@ -24,10 +24,7 @@ dependencies {
     implementation dataDependencies.rxJava
     implementation dataDependencies.rxAndroid
 
-    implementation testDependencies.mockWebServer
-
+    implementation androidTestDependencies.mockWebServer
     implementation androidTestDependencies.rxIdler
     implementation androidTestDependencies.espresso
-    implementation androidTestDependencies.androidxNavigationTest
-    implementation androidTestDependencies.fragmentTesting
 }

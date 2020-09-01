@@ -57,19 +57,18 @@ ext {
 
     testDependencies = [
             jUnit        : "androidx.test.ext:junit:$junit_version",
-            mockWebServer: "com.squareup.okhttp3:mockwebserver:4.8.1",
             mockk        : "io.mockk:mockk:1.10.0",
             arch         : "androidx.arch.core:core-testing:2.1.0",
             unitUtility  : ":testing:unit-utility"
     ]
 
     androidTestDependencies = [
+            mockWebServer: "com.squareup.okhttp3:mockwebserver:4.8.1",
             androidxTestRules     : "androidx.test:rules:$androix_test_version",
             androidxTestRunner    : "androidx.test:runner:$androix_test_version",
             rxIdler               : 'com.squareup.rx.idler:rx3-idler:0.11.0',
             espresso              : "androidx.test.espresso:espresso-core:$espresso_version",
             espressoContrib       : "androidx.test.espresso:espresso-contrib:$espresso_version",
-            androidxNavigationTest: "androidx.navigation:navigation-testing:$nav_version",
             fragmentTesting       : "androidx.fragment:fragment-testing:$fragment_version",
             uiUtility             : ":testing:ui-utility"
     ]

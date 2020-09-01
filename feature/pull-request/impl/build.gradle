@@ -56,4 +56,13 @@ dependencies {
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockk
     testImplementation testDependencies.arch
+
+    androidTestImplementation project(androidTestDependencies.uiUtility)
+    androidTestImplementation testDependencies.jUnit
+    androidTestImplementation androidTestDependencies.androidxTestRules
+    androidTestImplementation androidTestDependencies.androidxTestRunner
+    androidTestImplementation androidTestDependencies.espresso
+    androidTestImplementation androidTestDependencies.espressoContrib
+    androidTestImplementation androidTestDependencies.mockWebServer
+    androidTestImplementation androidTestDependencies.rxIdler
 }

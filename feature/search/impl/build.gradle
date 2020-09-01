@@ -52,19 +52,18 @@ dependencies {
     implementation dataDependencies.rxJava
     implementation dataDependencies.rxAndroid
 
-    testImplementation project(path: testDependencies.unitUtility)
-    testImplementation project(path: androidTestDependencies.uiUtility)
+    testImplementation project(testDependencies.unitUtility)
+    testImplementation project(androidTestDependencies.uiUtility)
     testImplementation testDependencies.jUnit
     testImplementation testDependencies.mockk
     testImplementation testDependencies.arch
 
-//    mockImplementation testDependencies.fragmentTesting
-//    androidTestImplementation testDependencies.jUnit
-//    androidTestImplementation testDependencies.androidxTestRules
-//    androidTestImplementation testDependencies.androidxTestRunner
-//    androidTestImplementation testDependencies.espresso
-//    androidTestImplementation testDependencies.espressoContrib
-//    androidTestImplementation testDependencies.androidxNavigationTest
-//    androidTestImplementation testDependencies.mockWebServer
-//    androidTestImplementation testDependencies.rxIdler
+    androidTestImplementation project(androidTestDependencies.uiUtility)
+    androidTestImplementation testDependencies.jUnit
+    androidTestImplementation androidTestDependencies.androidxTestRules
+    androidTestImplementation androidTestDependencies.androidxTestRunner
+    androidTestImplementation androidTestDependencies.espresso
+    androidTestImplementation androidTestDependencies.espressoContrib
+    androidTestImplementation androidTestDependencies.mockWebServer
+    androidTestImplementation androidTestDependencies.rxIdler
 }
