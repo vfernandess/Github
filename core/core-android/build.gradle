@@ -39,9 +39,5 @@ dependencies {
     implementation viewDependencies.lifecycle
     implementation viewDependencies.picasso
 
-    implementation dataDependencies.retrofit
-    implementation dataDependencies.retrofitLogging
-    implementation dataDependencies.gsonConverter
-    implementation dataDependencies.retrofitRxJava
     implementation dataDependencies.rxAndroid
 }
