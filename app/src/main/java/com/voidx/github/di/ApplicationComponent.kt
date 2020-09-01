@@ -1,6 +1,9 @@
 package com.voidx.github.di
 
+import com.voidx.core.di.CoreLibExposedModule
 import com.voidx.github.core.di.CoreAndroidExposedModule
+import com.voidx.pull.di.PullRequestExposedModule
+import com.voidx.pull.di.RepoPullRequestDependencies
 import com.voidx.repo.impl.di.RepoExposedModule
 import com.voidx.search.di.SearchExposedModule
 import com.voidx.search.di.SearchRepoDependencies
@@ -10,14 +13,15 @@ import javax.inject.Singleton
 
 @Component(
     modules = [
-        NavigationModule::class,
+        EnvironmentModule::class,
+        CoreLibExposedModule::class,
         CoreAndroidExposedModule::class,
+        NavigationModule::class,
         UserExposedModule::class,
         RepoExposedModule::class,
-        SearchExposedModule::class
+        SearchExposedModule::class,
+        PullRequestExposedModule::class
     ]
 )
 @Singleton
-interface ApplicationComponent : SearchRepoDependencies {
-
-}
+interface ApplicationComponent : SearchRepoDependencies, RepoPullRequestDependencies

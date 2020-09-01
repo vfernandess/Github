@@ -14,6 +14,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "SERVER_URL", "\"https://api.github.com/\""
+
     }
 
     buildTypes {
@@ -21,13 +24,26 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+
+        }
+        instrumentation {
+            buildConfigField "String", "SERVER_URL", "\"http://localhost:8080/\""
+        }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    testBuildType "instrumentation"
+    testOptions {
+        animationsDisabled = true
     }
 
     packagingOptions {
@@ -63,14 +79,14 @@ dependencies {
     implementation project(projectDependencies.searchImpl)
 
     implementation project(projectDependencies.pullRequestImpl)
+    implementation project(projectDependencies.pullRequestPublic)
 
     implementation coreDependencies.kotlin
     implementation coreDependencies.dagger
     kapt coreDependencies.daggerCompiler
 
+    implementation viewDependencies.material
     implementation viewDependencies.fragment
-    implementation viewDependencies.navigation
-    implementation viewDependencies.navigationFragment
     implementation viewDependencies.appCompat
     implementation viewDependencies.lifecycle
     implementation viewDependencies.androidx
