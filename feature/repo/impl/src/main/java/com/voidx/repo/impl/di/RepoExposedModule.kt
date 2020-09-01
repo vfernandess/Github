@@ -1,6 +1,6 @@
 package com.voidx.repo.impl.di
 
-import com.voidx.github.utility.data.Mapper
+import com.voidx.core.data.Mapper
 import com.voidx.repo.data.model.Repo
 import com.voidx.repo.impl.domain.RepoToRepoDtoMapper
 import com.voidx.repo.model.RepoDTO
