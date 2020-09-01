@@ -1,12 +1,21 @@
 package com.voidx.search.navigation
 
-import androidx.navigation.NavController
-import com.voidx.search.R
+import com.voidx.github.core.navigator.Navigator
+import com.voidx.pull.navigator.PullRequestNavigator
+import com.voidx.repo.model.RepoDTO
+import com.voidx.search.repo.view.SearchRepoFragment
 import javax.inject.Inject
 
-class SearchNavigatorImpl @Inject constructor (private val navigation: NavController) : SearchNavigator {
+class SearchNavigatorImpl @Inject constructor (
+    private val navigation: Navigator,
+    private val pullRequestNavigator: PullRequestNavigator
+) : SearchNavigator {
 
     override fun showRepoSearch() {
-        navigation.navigate(R.id.action_global_searchRepoFragment)
+        navigation.navigateTo(SearchRepoFragment())
+    }
+
+    override fun showPullRequestsFromRepo(repo: RepoDTO) {
+        pullRequestNavigator.showPullRequest(repo)
     }
 }

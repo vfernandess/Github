@@ -1,9 +1,10 @@
 package com.voidx.search.di
 
-import androidx.navigation.NavController
-import com.voidx.github.utility.data.Mapper
+import com.voidx.github.core.navigator.Navigator
+import com.voidx.core.data.Mapper
 import com.voidx.repo.data.model.Repo
 import com.voidx.repo.model.RepoDTO
+import com.voidx.search.navigation.SearchNavigator
 import com.voidx.search.repo.view.SearchRepoFragment
 import dagger.Component
 import io.reactivex.rxjava3.core.Scheduler
@@ -27,5 +28,6 @@ interface SearchRepoDependencies {
     fun retrofit(): Retrofit
     fun repoToRepoDtoMapper(): Mapper<Repo, RepoDTO>
     fun androidScheduler(): Scheduler
-    fun navigation(): NavController
+    fun navigation(): Navigator
+    fun searchNavigator(): SearchNavigator
 }

@@ -1,8 +1,8 @@
 package com.voidx.search.repo.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.voidx.core.data.Mapper
 import com.voidx.github.core.presentation.State
-import com.voidx.github.utility.data.Mapper
 import com.voidx.repo.data.model.Repo
 import com.voidx.repo.model.RepoDTO
 import com.voidx.search.data.repository.SearchRepository

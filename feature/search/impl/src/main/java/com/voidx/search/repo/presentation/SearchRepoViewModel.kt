@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.voidx.github.core.data.ext.appendItems
 import com.voidx.github.core.presentation.State
-import com.voidx.github.utility.data.ext.disposedBy
+import com.voidx.core.data.ext.disposedBy
 import com.voidx.repo.model.RepoDTO
 import com.voidx.search.repo.domain.SearchRepoUseCase
 import io.reactivex.rxjava3.core.Scheduler

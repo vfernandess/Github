@@ -4,14 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.voidx.search.repo.view.SearchRepoFragment">
 
-<!--    <data>-->
-
-<!--        <variable-->
-<!--            name="searchViewModel"-->
-<!--            type="com.voidx.search.repo.presentation.SearchRepoViewModel" />-->
-
-<!--    </data>-->
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/pullToRefresh"
         android:layout_width="match_parent"
@@ -30,11 +22,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <View
+            <TextView
                 android:id="@+id/empty"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@color/design_default_color_primary"
+                style="@style/Title.Bold.Azure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_results"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,5 +35,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 </layout>

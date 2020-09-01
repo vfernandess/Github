@@ -1,6 +1,6 @@
 package com.voidx.search.repo.domain.impl
 
-import com.voidx.github.utility.data.Mapper
+import com.voidx.core.data.Mapper
 import com.voidx.repo.data.model.Repo
 import com.voidx.repo.model.RepoDTO
 import com.voidx.search.data.model.SearchResult
@@ -9,7 +9,7 @@ import com.voidx.search.repo.domain.SearchRepoUseCase
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class SearchRepoUseCaseImpl @Inject constructor (
+class SearchRepoUseCaseImpl @Inject constructor(
     private val repository: SearchRepository,
     private val mapper: Mapper<@JvmSuppressWildcards Repo, @JvmSuppressWildcards RepoDTO>
 ) : SearchRepoUseCase {

@@ -1,6 +1,6 @@
 package com.voidx.search.repo.domain
 
-import com.voidx.github.utility.data.Mapper
+import com.voidx.core.data.Mapper
 import com.voidx.repo.data.model.Repo
 import com.voidx.repo.model.RepoDTO
 import com.voidx.search.data.repository.SearchRepository

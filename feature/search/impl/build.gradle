@@ -28,6 +28,7 @@ dependencies {
     implementation project(projectDependencies.repoPublic)
     implementation project(projectDependencies.searchPublic)
     implementation project(projectDependencies.userPublic)
+    implementation project(projectDependencies.pullRequestPublic)
 
     implementation coreDependencies.kotlin
     implementation coreDependencies.dagger
@@ -38,8 +39,6 @@ dependencies {
     implementation viewDependencies.androidx
     implementation viewDependencies.constraintLayout
     implementation viewDependencies.fragment
-    implementation viewDependencies.navigation
-    implementation viewDependencies.navigationFragment
     implementation viewDependencies.recycler
     implementation viewDependencies.lifecycle
     implementation viewDependencies.picasso

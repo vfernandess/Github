@@ -30,12 +30,6 @@ internal interface SearchRepoInternalModule
 @Module
 internal interface SearchRepoDataModule {
 
-//    @[Binds]
-//    fun bindsSearchRemoteRepository(searchRepository: SearchRemoteRepositoryImpl): SearchRemoteRepositoryImpl
-//
-//    @[Binds]
-//    fun bindsSearchRepository(searchRepository: SearchRepositoryImpl): SearchRepository
-
     companion object {
 
         @[Provides]
@@ -45,7 +39,7 @@ internal interface SearchRepoDataModule {
         }
 
         @[Provides]
-        fun providesApi(retrofit: Retrofit): SearchAPI =
+        fun providesSearchApi(retrofit: Retrofit): SearchAPI =
             retrofit.create(SearchAPI::class.java)
     }
 }

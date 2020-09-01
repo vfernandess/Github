@@ -16,6 +16,7 @@ import com.voidx.github.core.view.recyclerview.InfiniteLoadMore
 import com.voidx.github.core.view.recyclerview.withBottomLoad
 import com.voidx.search.databinding.FragmentSearchRepoBinding
 import com.voidx.search.di.DaggerSearchRepoComponent
+import com.voidx.search.navigation.SearchNavigator
 import com.voidx.search.repo.presentation.SearchRepoViewModel
 import javax.inject.Inject
 
@@ -27,9 +28,12 @@ class SearchRepoFragment : Fragment() {
     }
 
     @Inject
+    lateinit var navigator: SearchNavigator
+
+    @Inject
     lateinit var viewModelProviderFactory: ViewModelProvider.Factory
 
-    val viewModel: SearchRepoViewModel by viewModels { viewModelProviderFactory }
+    private val viewModel: SearchRepoViewModel by viewModels { viewModelProviderFactory }
 
     @Inject
     lateinit var adapter: SearchRepoAdapter
@@ -62,6 +66,10 @@ class SearchRepoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        adapter.onItemClick = {
+            it?.let(navigator::showPullRequestsFromRepo)
+        }
 
         binding.pullToRefresh.setOnRefreshListener {
             adapter.reset()
@@ -112,5 +120,4 @@ class SearchRepoFragment : Fragment() {
         binding.pullToRefresh.isRefreshing = true
         infiniteBottomLoad.isLoading = true
     }
-
 }

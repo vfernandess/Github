@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.voidx.github.core.view.recyclerview.OnItemClick
 import com.voidx.github.core.view.recyclerview.binding.BindableViewHolder
 import com.voidx.github.core.view.recyclerview.binding.RecyclerViewBinding
 import com.voidx.repo.databinding.RepoItemBinding
@@ -17,6 +18,8 @@ class SearchRepoAdapter @Inject constructor() :
 
     private val items = mutableListOf<RepoDTO>()
 
+    var onItemClick: OnItemClick<RepoDTO>? = null
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -28,6 +31,10 @@ class SearchRepoAdapter @Inject constructor() :
     }
 
     override fun onBindViewHolder(holder: BindableViewHolder<RepoItemBinding>, position: Int) {
+        holder.onClick = {
+            onItemClick?.invoke(items.elementAtOrNull(it))
+        }
+
         holder.viewDataBinding.repo = items.elementAtOrNull(position)
         holder.viewDataBinding.avatarPlaceholder =
             ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_account)
