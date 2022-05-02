@@ -1,69 +1,61 @@
 # Github
 
-Aplicativo playground usando:
+Github app using:
 
 - MVVM
 - Clean Architecture
-- Injeção de Dependência
-- Alguns conceitos de SOLID, principalmente Inversão de dependência
+- Dependency Injection
+- SOLID principles, mainly the dependency inversion
 - Data Binding
 - LiveData
 - RxJava
 - RxAndroid
 - Repository
-- Modularização
-- Testes unitários
-- Testes de tela
+- Modularization
+- Unit testing
+- UI Testing
 
-# Estrutura de chamadas
+# How it works
 
-A estrutura base é usando o pattern Repository para pegar daos remotos e locais com Reactive 
-após isso é repassado para o UseCase onde o dado sofre um mapeamento para DTO, para ser usado 
-na View. Depois é repassado novamente para o ViewModel que fará tratamento de 
-estado(sucesso, erro, carregando ou vazio) além de notificar a View por meio de LiveData. 
-Como mostrado na imagem abaixo:
+It start retriving the local or remote data using the repository pattern, then it's time for the UseCases
+where the raw model is mapped into a DTO or apply some business rules to it. After this it's time for the ViewModel
+get this data and apply some Redux on it transforming this data into states (like success, error, empty state, etc...)
+notifying the View over the LiveData.
+
+You can find below an image of how it works:
 
 ![chamadas](https://raw.githubusercontent.com/vfernandess/Github/master/base.png)
 
 
-# Estrutura da modularização
+# Modularization
 
-Em sumo a modularização pensando em cache de módulos para dimunuir o tempo de build, além de no 
-futuro ficar bem mais fácil de colocar o Dynamic-Modules. 
-As regras propostas dessa modularização são as seguintes:
+The modularization was introduced to lower the build time, besides we can separete the feature responsibilities and in the future
+add Dynamic-Modules.
 
-- Ao criar uma feature terá dois módulos: public e impl.
+The rules for this modularization are:
 
-- features podem depender somente do módulo public de outras features.
-    
-- módulos impl dependem somente de módulos public nunca de outro impl.
-    
-- public contém o que outras features necessitam para seu funcionamento
-com cautela(afinal Grandes poderes Grandes responsabilidades). Aqui pode ser colocado resources
-tipo imagens, cores e interfaces(por exemplo a navegação) porém por ser public e sem muitas "funcionalidades"
-aqui não é lugar de injeção de dependência muito menos de testes.
-      
-- impl contém toda a lógica da implementação da feature.
-Aqui entra a injeção de dependencia, testes de tela e algumas outras coisas necessárias para a feature funcionar.
-      
-- App é o principal ele conhece todos os impl
+1. When a feature module is created it must have two submodules: public and impl
+2. Features modules can only be depedant from the public module of another feature module
+3. The public submodule have what other features depend on. Here is the place where you share images, files, colors, interfaces.
+4. The impl submodule depend only from public submodules. Here is the place for the DI, UI Testing, unit testing and whatever concrete implementation needed to project works.
+5. The "app" module is the application module, it is the only which knows the all the impl submodules. It acts as a bridge to have all the implementation know each other.
 
-Abaixo segue a imagem da modularização:
+You can find below an image of how it works:
 
 ![modularização](https://raw.githubusercontent.com/vfernandess/Github/master/modularization.png)
 
-O projeto também conta com alguns módulos suplementares:
+# More Resources
+
+This project have some supplementary modules:
     
-- core-binding: utilitários para data binding por exemplo os @BindableAdapter
-- core-lib: contém classes base de mapeamento além do networking do projeto
-- core-android: utilitários de LiveData, Injeção de Dependencia, Navegação, enum da máquina de estado.
-- design-system: aqui contém os estilos que serão utilizados em TextViews e no futuro
-componentes customizados.
-- ui-utility: possui alguns matchers especificos do RecyclerView, Helper de Mocks e TestRules
-utilizados em testes instumentizados
-- unit-utility: possui Helper de Mocks e TestRules para testes unitários
+- core-binding: utils for data binding. Like the BindableAdapter. It is a android module
+- core-lib: have all base mapper class also have networking setup. It is a kotlin module.
+- core-android: android utils for LiveData, DI, Navigation, State Machine. It is a android module
+- design-system: have UI styles like fonts, colors, styles and in the future is intended to has the design-system-components
+- ui-utility: utils for UI Components like espresso ui macthers, mock helpers and JUnit TestRules for UI Testing.
+- unit-utility: utils for Mocks and TestRules for unit testing
     
-# Fontes de pesquisa
+# Sources
 
 [GDG Talk: Android - Modularização em larga escala](https://www.youtube.com/watch?v=UFmmcUvWoI0)
 
