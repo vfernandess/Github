@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.voidx.github.core.view.recyclerview.OnItemClick
 import com.voidx.github.core.view.recyclerview.binding.BindableViewHolder
 import com.voidx.github.core.view.recyclerview.binding.RecyclerViewBinding
-import com.voidx.pull.databinding.PullItemBinding
+import com.voidx.pull.impl.databinding.PullItemBinding
 import com.voidx.pull.repo.domain.model.PullRequestDTO
 import javax.inject.Inject
 

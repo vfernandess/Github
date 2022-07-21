@@ -2,6 +2,7 @@ package com.voidx.search.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.google.gson.Gson
 import com.voidx.github.core.lifecycle.DefaultViewModelProviderFactory
 import com.voidx.github.core.lifecycle.ViewModelKey
 import com.voidx.search.data.api.SearchAPI

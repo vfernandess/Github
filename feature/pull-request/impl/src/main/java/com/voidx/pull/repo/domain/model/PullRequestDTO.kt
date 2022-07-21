@@ -2,7 +2,7 @@ package com.voidx.pull.repo.domain.model
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-import com.voidx.pull.BR
+import com.voidx.pull.impl.BR
 import com.voidx.user.domain.model.UserDTO
 import java.util.*
 

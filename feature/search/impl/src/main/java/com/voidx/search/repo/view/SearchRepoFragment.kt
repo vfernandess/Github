@@ -14,7 +14,7 @@ import com.voidx.github.core.di.ext.dependencies
 import com.voidx.github.core.presentation.State
 import com.voidx.github.core.view.recyclerview.InfiniteLoadMore
 import com.voidx.github.core.view.recyclerview.withBottomLoad
-import com.voidx.search.databinding.FragmentSearchRepoBinding
+import com.voidx.search.impl.databinding.FragmentSearchRepoBinding
 import com.voidx.search.di.DaggerSearchRepoComponent
 import com.voidx.search.navigation.SearchNavigator
 import com.voidx.search.repo.presentation.SearchRepoViewModel

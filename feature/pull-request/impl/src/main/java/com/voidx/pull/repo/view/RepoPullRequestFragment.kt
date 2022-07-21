@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.voidx.github.core.di.ext.dependencies
 import com.voidx.github.core.navigator.Destination
 import com.voidx.github.core.presentation.State
-import com.voidx.pull.databinding.FragmentRepoPullRequestBinding
+import com.voidx.pull.impl.databinding.FragmentRepoPullRequestBinding
 import com.voidx.pull.di.DaggerPullRequestComponent
 import com.voidx.pull.navigator.PullRequestNavigator
 import com.voidx.pull.repo.presentation.RepoPullRequestViewModel
