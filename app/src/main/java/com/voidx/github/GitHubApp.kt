@@ -6,6 +6,7 @@ import com.voidx.github.core.navigator.Navigator
 import com.voidx.github.di.ApplicationComponent
 import com.voidx.github.di.DaggerApplicationComponent
 import com.voidx.github.di.NavigationModule
+import com.voidx.security.Keys
 
 class GitHubApp : Application(), DependenciesProvider<Any> {
 
@@ -15,6 +16,9 @@ class GitHubApp : Application(), DependenciesProvider<Any> {
 
     override fun onCreate() {
         super.onCreate()
+
+        val key = Keys.apiKey()
+        print(key)
     }
 
     fun createApplicationComponent(navigator: Navigator) {
