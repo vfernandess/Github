@@ -4,7 +4,6 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion compile_sdk_version
-    buildToolsVersion build_tools_version
 
     defaultConfig {
         applicationId "com.voidx.github"
@@ -15,8 +14,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "SERVER_URL", "\"https://api.github.com/\""
-
+//        buildConfigField "String", "SERVER_URL", "\"https://api.github.com/\""
+        buildConfigField "String", "SERVER_URL", "\"https://api.flickr.com/services/rest/\""
     }
 
     buildTypes {
@@ -46,24 +45,25 @@ android {
     testOptions {
         animationsDisabled = true
     }
-
     packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
-        exclude("META-INF/*.kotlin_module")
+        resources {
+            excludes += [
+                    'META-INF/DEPENDENCIES',
+                    'META-INF/LICENSE',
+                    'META-INF/LICENSE.txt',
+                    'META-INF/license.txt',
+                    'META-INF/NOTICE',
+                    'META-INF/NOTICE.txt',
+                    'META-INF/notice.txt',
+                    'META-INF/ASL2.0',
+                    'META-INF/*.kotlin_module'
+            ]
+        }
     }
 
-    buildFeatures{
-        dataBinding = true
-        viewBinding = true
+    dataBinding {
+        enabled = true
     }
-
 }
 
 dependencies {
@@ -82,6 +82,11 @@ dependencies {
     implementation project(projectDependencies.pullRequestImpl)
     implementation project(projectDependencies.pullRequestPublic)
 
+    implementation project(projectDependencies.photoImpl)
+    implementation project(projectDependencies.photoPublic)
+
+    implementation project(projectDependencies.security)
+
     implementation coreDependencies.kotlin
     implementation coreDependencies.dagger
     kapt coreDependencies.daggerCompiler
@@ -94,4 +99,5 @@ dependencies {
 
     implementation dataDependencies.rxJava
     implementation dataDependencies.retrofit
+    implementation dataDependencies.gson
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="Github.app" target="11" />
+      <module name="Github.core.core-android" target="11" />
+      <module name="Github.core.core-binding" target="11" />
+      <module name="Github.core.design-system" target="11" />
+      <module name="Github.core.security" target="11" />
+      <module name="Github.feature.photo.impl" target="11" />
+      <module name="Github.feature.photo.public" target="11" />
+      <module name="Github.feature.pull-request.impl" target="11" />
+      <module name="Github.feature.pull-request.public" target="11" />
+      <module name="Github.feature.repo.impl" target="11" />
+      <module name="Github.feature.repo.public" target="11" />
+      <module name="Github.feature.search.impl" target="11" />
+      <module name="Github.feature.search.public" target="11" />
+      <module name="Github.feature.user.impl" target="11" />
+      <module name="Github.feature.user.public" target="11" />
+      <module name="Github.testing.ui-utility" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

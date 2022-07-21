@@ -12,6 +12,7 @@ dependencies {
     implementation dataDependencies.retrofitLogging
     implementation dataDependencies.gsonConverter
     implementation dataDependencies.retrofitRxJava
+    implementation dataDependencies.scalarsConverter
 }
 
 sourceCompatibility = "1.8"

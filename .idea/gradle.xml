@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/core-android" />
+            <option value="$PROJECT_DIR$/core/core-binding" />
+            <option value="$PROJECT_DIR$/core/core-lib" />
+            <option value="$PROJECT_DIR$/core/design-system" />
+            <option value="$PROJECT_DIR$/core/security" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/photo" />
+            <option value="$PROJECT_DIR$/feature/photo/impl" />
+            <option value="$PROJECT_DIR$/feature/photo/public" />
+            <option value="$PROJECT_DIR$/feature/pull-request" />
+            <option value="$PROJECT_DIR$/feature/pull-request/impl" />
+            <option value="$PROJECT_DIR$/feature/pull-request/public" />
+            <option value="$PROJECT_DIR$/feature/repo" />
+            <option value="$PROJECT_DIR$/feature/repo/impl" />
+            <option value="$PROJECT_DIR$/feature/repo/public" />
+            <option value="$PROJECT_DIR$/feature/search" />
+            <option value="$PROJECT_DIR$/feature/search/impl" />
+            <option value="$PROJECT_DIR$/feature/search/public" />
+            <option value="$PROJECT_DIR$/feature/user" />
+            <option value="$PROJECT_DIR$/feature/user/impl" />
+            <option value="$PROJECT_DIR$/feature/user/public" />
+            <option value="$PROJECT_DIR$/testing" />
+            <option value="$PROJECT_DIR$/testing/ui-utility" />
+            <option value="$PROJECT_DIR$/testing/unit-utility" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

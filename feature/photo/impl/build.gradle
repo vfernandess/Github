@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
+    defaultConfig {
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+        }
+        debug {
+        }
+        instrumentation {
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation project(projectDependencies.utility)
+    implementation project(projectDependencies.coreAndroid)
+    implementation project(projectDependencies.coreBinding)
+    implementation project(projectDependencies.designSystem)
+    implementation project(projectDependencies.photoPublic)
+
+    implementation coreDependencies.kotlin
+    implementation coreDependencies.dagger
+    kapt coreDependencies.daggerCompiler
+
+    implementation viewDependencies.legacy
+    implementation viewDependencies.appCompat
+    implementation viewDependencies.androidx
+    implementation viewDependencies.constraintLayout
+    implementation viewDependencies.fragment
+    implementation viewDependencies.recycler
+    implementation viewDependencies.lifecycle
+    implementation viewDependencies.picasso
+    implementation viewDependencies.pullToRefresh
+    implementation viewDependencies.cards
+
+    implementation dataDependencies.gson
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitLogging
+    implementation dataDependencies.gsonConverter
+    implementation dataDependencies.retrofitRxJava
+    implementation dataDependencies.rxJava
+    implementation dataDependencies.rxAndroid
+
+    kapt coreDependencies.daggerCompiler
+}

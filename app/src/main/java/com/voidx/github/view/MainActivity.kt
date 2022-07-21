@@ -10,6 +10,7 @@ import com.voidx.github.R
 import com.voidx.github.core.di.ext.dependencies
 import com.voidx.github.core.navigator.Destination
 import com.voidx.github.core.navigator.Navigator
+import com.voidx.photo.di.PhotoListDependencies
 import com.voidx.search.di.SearchRepoDependencies
 
 class MainActivity : AppCompatActivity(), Navigator, FragmentManager.OnBackStackChangedListener {
@@ -30,8 +31,8 @@ class MainActivity : AppCompatActivity(), Navigator, FragmentManager.OnBackStack
 
         supportFragmentManager.addOnBackStackChangedListener(this)
 
-        val navigator = dependencies<SearchRepoDependencies>().searchNavigator()
-        navigator.showRepoSearch()
+        val navigator = dependencies<PhotoListDependencies>().photoListNavigator()
+        navigator.showPhotoList()
     }
 
     override fun onSupportNavigateUp(): Boolean {

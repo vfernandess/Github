@@ -2,6 +2,8 @@ package com.voidx.github.di
 
 import com.voidx.core.di.CoreLibExposedModule
 import com.voidx.github.core.di.CoreAndroidExposedModule
+import com.voidx.photo.di.PhotoListDependencies
+import com.voidx.photo.di.PhotoListExposedModule
 import com.voidx.pull.di.PullRequestExposedModule
 import com.voidx.pull.di.RepoPullRequestDependencies
 import com.voidx.repo.impl.di.RepoExposedModule
@@ -20,8 +22,12 @@ import javax.inject.Singleton
         UserExposedModule::class,
         RepoExposedModule::class,
         SearchExposedModule::class,
-        PullRequestExposedModule::class
+        PullRequestExposedModule::class,
+        PhotoListExposedModule::class
     ]
 )
 @Singleton
-interface ApplicationComponent : SearchRepoDependencies, RepoPullRequestDependencies
+interface ApplicationComponent :
+    SearchRepoDependencies,
+    RepoPullRequestDependencies,
+    PhotoListDependencies
